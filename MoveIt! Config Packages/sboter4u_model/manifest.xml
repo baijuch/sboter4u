@@ -1,0 +1,6 @@
+<package>
+  <description brief="sboter4u_model">sboter4u_model</description>
+  <depend package="gazebo" />
+  <author>me</author>
+  <license>BSD</license>
+</package>

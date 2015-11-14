@@ -1,0 +1,470 @@
+<robot
+  name="sboter4u_model">
+  <link
+    name="base_Link">
+    <inertial>
+      <origin
+        xyz="0.13275 0.14932 0.15353"
+        rpy="0 0 0" />
+      <mass
+        value="13.939" />
+      <inertia
+        ixx="0.10125"
+        ixy="-0.00021844"
+        ixz="-0.00033793"
+        iyy="0.087972"
+        iyz="0.0034335"
+        izz="0.095961" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/base_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.01706 0.01961 0.02824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/base_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="shoulder_Link">
+    <inertial>
+      <origin
+        xyz="0.00064794 -0.0081798 0.11189"
+        rpy="0 0 0" />
+      <mass
+        value="12.102" />
+      <inertia
+        ixx="0.069345"
+        ixy="0.00053463"
+        ixz="-9.59E-05"
+        iyy="0.09864"
+        iyz="0.0061367"
+        izz="0.10261" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/shoulder_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.02941 0.04902 0.24902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/shoulder_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_joint"
+    type="revolute">
+    <origin
+      xyz="0.13222 -0.16175 0.21721"
+      rpy="0.063114 2.647E-17 -0.063535" />
+    <parent
+      link="base_Link" />
+    <child
+      link="shoulder_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.7054"
+      upper="2.7054"
+      effort="5"
+      velocity="0.3488" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="elbow_Link">
+    <inertial>
+      <origin
+        xyz="7.2164E-16 -0.11075 0.0039402"
+        rpy="0 0 0" />
+      <mass
+        value="2.8284" />
+      <inertia
+        ixx="0.021626"
+        ixy="-8.9392E-17"
+        ixz="2.0553E-15"
+        iyy="0.013632"
+        iyz="-2.3367E-05"
+        izz="0.033242" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/elbow_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.02941 0.04902 0.34902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/elbow_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.029 0.19766"
+      rpy="0 -8.6736E-19 -1.3878E-17" />
+    <parent
+      link="shoulder_Link" />
+    <child
+      link="elbow_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-2.2690"
+      upper="0.6109"
+      effort="4"
+      velocity="0.4587" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="pitch_Link">
+    <inertial>
+      <origin
+        xyz="2.9815E-13 -0.073952 0.003323"
+        rpy="0 0 0" />
+      <mass
+        value="3.2412" />
+      <inertia
+        ixx="0.027436"
+        ixy="-1.1652E-13"
+        ixz="-1.6685E-15"
+        iyy="0.0081405"
+        iyz="0.00011392"
+        izz="0.034105" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/pitch_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.02941 0.04902 0.44902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/pitch_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="elbow_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.22 0"
+      rpy="1.3878E-17 1.6914E-16 1.3461E-15" />
+    <parent
+      link="elbow_Link" />
+    <child
+      link="pitch_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-2.2690"
+      upper="2.2690"
+      effort="3"
+      velocity="0.4587" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="roll_Link">
+    <inertial>
+      <origin
+        xyz="5.0577E-05 3.8307E-10 -0.018366"
+        rpy="0 0 0" />
+      <mass
+        value="0.48195" />
+      <inertia
+        ixx="0.00036556"
+        ixy="-7.8517E-13"
+        ixz="7.4017E-07"
+        iyy="0.00036398"
+        iyz="-2.2678E-13"
+        izz="6.7274E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/roll_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.02941 0.14902 0.14902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/roll_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.22 0"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="pitch_Link" />
+    <child
+      link="roll_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.2690"
+      upper="2.2690"
+      effort="2"
+      velocity="1.4478" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="gripper_Link">
+    <inertial>
+      <origin
+        xyz="2.2204E-16 -8.3267E-17 0.070299"
+        rpy="0 0 0" />
+      <mass
+        value="0.27956" />
+      <inertia
+        ixx="0.00098187"
+        ixy="-2.7952E-20"
+        ixz="2.8189E-18"
+        iyy="0.00095638"
+        iyz="-2.4183E-18"
+        izz="0.00013429" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/gripper_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/gripper_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 1.3878E-17 0" />
+    <parent
+      link="roll_Link" />
+    <child
+      link="gripper_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-9.9490"
+      upper="9.9490"
+      effort="2"
+      velocity="1.8491" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="pad1_Link">
+    <inertial>
+      <origin
+        xyz="-0.039374 5.5511E-17 -0.00025"
+        rpy="0 0 0" />
+      <mass
+        value="0.007491" />
+      <inertia
+        ixx="1.655E-07"
+        ixy="-2.9699E-20"
+        ixz="-3.3353E-19"
+        iyy="3.5223E-06"
+        iyz="3.7058E-22"
+        izz="3.563E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/pad1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/pad1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pad1_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.0545 -0.0905"
+      rpy="1.5708 -0.74758 -1.5708" />
+    <parent
+      link="gripper_Link" />
+    <child
+      link="pad1_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.5709"
+      effort="1"
+      velocity="2" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="pad2_Link">
+    <inertial>
+      <origin
+        xyz="-0.039374 -2.2204E-16 -0.00025"
+        rpy="0 0 0" />
+      <mass
+        value="0.007491" />
+      <inertia
+        ixx="1.655E-07"
+        ixy="-2.9951E-20"
+        ixz="-3.496E-19"
+        iyy="3.5223E-06"
+        iyz="1.4029E-21"
+        izz="3.563E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/pad2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sboter4u_model/meshes/pad2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pad2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.0545 -0.0905"
+      rpy="-1.5708 -0.74758 1.5708" />
+    <parent
+      link="gripper_Link" />
+    <child
+      link="pad2_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="1.5709"
+      effort="1"
+      velocity="2" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+</robot>
