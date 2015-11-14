@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: sboter4u_model
+    relative_path: robots/sboter4u_model.URDF
+  SRDF:
+    relative_path: config/sboter4u_model.srdf
+  CONFIG:
+    generated_timestamp: 1447248130

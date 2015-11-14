@@ -1,0 +1,11 @@
+<library path="libmoveit_fake_controller_manager">
+
+  <class name="sboter4u_controller_manager/MoveItControllerManager"
+         type="sboter4u_controller_manager::MoveItControllerManager"
+         base_class_type="moveit_controller_manager::MoveItControllerManager">
+    <description>
+      A fake controller for MoveIt.
+    </description>
+  </class>
+
+</library>

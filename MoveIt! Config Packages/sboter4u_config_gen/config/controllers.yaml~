@@ -1,0 +1,19 @@
+controller_manager_ns: sboter4u_controller_manager
+controller_list:
+  - name: main_group_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - base_joint
+      - shoulder_joint
+      - elbow_joint
+      - pitch_joint
+      - roll_joint
+  - name: gripp_group_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - pad1_joint
+      - pad2_joint
