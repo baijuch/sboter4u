@@ -1,7 +1,7 @@
 ---
 author: admin
 comments: false
-date: 
+date: 2015-11-15
 layout: page
 slug: Scorbot ER4U
 title: Scorbot ER4U using MTIS
@@ -17,7 +17,7 @@ wordpress_id:
   * Maintainer(s) : baijuchaudhari@gmail.com
 
 	
-  * STATUS: [Release 1.0]()
+  * STATUS: [BETA](Experimental)
 
 
 
