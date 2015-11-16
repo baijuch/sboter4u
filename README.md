@@ -24,7 +24,7 @@ i'm still experimenting to get it worked using wine.
 
 ## Running sequence -
 1. switch on robot and connect it to Windows system
-2. execute roslaunch sboter4u_moveit_config demo.launch(on Linux System)
+2. execute roslaunch sboter4u_moveit_config real.launch(on Linux System)
 3. execute Matlab Node binary(or program)(on windows system)
 4. confirm robot has moved to Home position(realtime) and same is displayed in RViz Window
 5. Done
